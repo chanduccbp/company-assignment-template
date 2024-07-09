@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 import './index.css'
 
 class RegistrationForm extends Component {
@@ -6,8 +7,6 @@ class RegistrationForm extends Component {
     username: '',
     email: '',
     password: '',
-    showSubmitError: false,
-    errorMsg: '',
   }
 
   onChangeEmail = event => {
@@ -22,17 +21,20 @@ class RegistrationForm extends Component {
     this.setState({username: event.target.value})
   }
 
-  onSubmitSuccess = () => {}
+  onSubmitSuccess = jwtToken => {
+    const {history} = this.props
 
-  onSubmitFailure = errorMsg => {
-    this.setState({showSubmitError: true, errorMsg})
+    Cookies.set('jwt_token_register', jwtToken, {
+      expires: 30,
+    })
+    history.replace('/login')
   }
 
   submitForm = async event => {
     event.preventDefault()
     const {username, email, password} = this.state
     const userDetails = {username, email, password}
-    const url = 'https://auth-api10.p.rapidapi.com/api/v1/register'
+    const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/register'
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
@@ -40,9 +42,7 @@ class RegistrationForm extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok === true) {
-      this.onSubmitSuccess(data)
-    } else {
-      this.onSubmitFailure(data.error_msg)
+      this.onSubmitSuccess(data.jwt_token)
     }
   }
 

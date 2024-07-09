@@ -22,11 +22,16 @@ class LoginForm extends Component {
 
   onSubmitSuccess = jwtToken => {
     const {history} = this.props
+    const registerToken = Cookies.get('jwt_token_register')
 
-    Cookies.set('jwt_token', jwtToken, {
-      expires: 30,
-    })
-    history.replace('/')
+    if (registerToken === undefined) {
+      history.replace('/registration')
+    } else {
+      Cookies.set('jwt_token_login', jwtToken, {
+        expires: 30,
+      })
+      history.replace('/')
+    }
   }
 
   onSubmitFailure = errorMsg => {
@@ -37,14 +42,9 @@ class LoginForm extends Component {
     event.preventDefault()
     const {email, password} = this.state
     const userDetails = {email, password}
-    const url = 'https://auth-api10.p.rapidapi.com/api/v1/login'
-    const rapidApiKey = '18e4529063mshb61a2a715f0e47dp1017b3jsnb98bca4207fd'
+    const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/login'
     const options = {
       method: 'POST',
-      headers: {
-        'x-rapidapi-key': rapidApiKey,
-        'x-rapidapi-host': 'auth-api10.p.rapidapi.com',
-      },
       body: JSON.stringify(userDetails),
     }
     const response = await fetch(url, options)
@@ -54,7 +54,7 @@ class LoginForm extends Component {
     if (response.ok === true) {
       this.onSubmitSuccess(data.jwt_token)
     } else {
-      this.onSubmitFailure(data.error_msg)
+      this.onSubmitFailure('enter valid credentials')
     }
   }
 
@@ -100,7 +100,7 @@ class LoginForm extends Component {
 
   render() {
     const {showSubmitError, errorMsg} = this.state
-    const jwtToken = Cookies.get('jwt_token')
+    const jwtToken = Cookies.get('jwt_token_login')
 
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
