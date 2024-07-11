@@ -8,21 +8,24 @@ Create a frontend application for the user Authentication module
 <summary>login page</summary>
 <br/>
 
- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698725/Screenshot_2024-07-11_172132_j3eyca.png) 
+[Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698725/Screenshot_2024-07-11_172132_j3eyca.png)
+
 </details>
 
 <details>
 <summary>register page</summary>
 <br/>
 
- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698581/Screenshot_2024-07-11_171304_zdvbkr.png) 
+[Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698581/Screenshot_2024-07-11_171304_zdvbkr.png)
+
 </details>
 
 <details>
 <summary>home page</summary>
 <br/>
 
- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698811/Screenshot_2024-07-11_172315_htd8vl.png) 
+[Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698811/Screenshot_2024-07-11_172315_htd8vl.png)
+
 </details>
 
 ### Set Up Instructions
@@ -99,15 +102,15 @@ The app must have the following functionalities:
 <details>
 <summary>Colors</summary>
 <br/>
-red
-lightblue
-#ffffff
-blue
-wheat
-black
-yellow
-violet
-aquamarine
+- red
+- lightblue
+- #ffffff
+- blue
+- wheat
+- black
+- yellow
+- violet
+- aquamarine
 
 <!-- <div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div> -->
 
