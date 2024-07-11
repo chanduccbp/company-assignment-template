@@ -102,6 +102,7 @@ The app must have the following functionalities:
 <details>
 <summary>Colors</summary>
 <br/>
+
 - red
 - lightblue
 - #ffffff
