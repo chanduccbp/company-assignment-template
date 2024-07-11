@@ -1,13 +1,6 @@
 Create a frontend application for the user Authentication module
 
-### Refer to the image below:
-
-Add UI reference image yourself
-
-<div style="text-align: center;">
-     <!-- <img src="https://cdn.dribbble.com/userupload/8175642/file/original-5cd4b26b9d8493caff8def3dfc9a4637.png?resize=1200x776" alt="ui"> -->
-</div>
-<br/>
+### Refer to the images below:
 
 ### Design Files
 
@@ -15,17 +8,21 @@ Add UI reference image yourself
 <summary>login page</summary>
 <br/>
 
-<!-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://cdn.dribbble.com/userupload/8175642/file/original-5cd4b26b9d8493caff8def3dfc9a4637.png?resize=1200x776) -->
+ [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698725/Screenshot_2024-07-11_172132_j3eyca.png) 
+</details>
 
+<details>
 <summary>register page</summary>
 <br/>
 
-<!-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://cdn.dribbble.com/userupload/8175641/file/original-243e7983408733c678084417fccf79b6.png?resize=1024x662&vertical=center) -->
+ [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698581/Screenshot_2024-07-11_171304_zdvbkr.png) 
+</details>
 
+<details>
 <summary>home page</summary>
 <br/>
 
-<!-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://cdn.dribbble.com/users/11040167/screenshots/18077569/media/436484db994b41fa08337fcda045b8a9.png?resize=1000x750&vertical=center) -->
+ [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://res.cloudinary.com/dgil22y25/image/upload/v1720698811/Screenshot_2024-07-11_172315_htd8vl.png) 
 </details>
 
 ### Set Up Instructions
@@ -46,8 +43,8 @@ Add UI reference image yourself
 
 The app must have the following functionalities:
 
-- first login page should be displayed , and user enters email and password , if the user is registered user then user should be redirected to home page if credentials are correct or else error should be displayed, if not registered user will be redirected to register page.
-- after registering user should be able to login with registered credentials.
+- first login page should be displayed , and user enters email and password , if the user is registered user then user should be redirected to home page if credentials are correct, if not registered user will be redirected to register page.
+- after registering, user should be able to login with registered credentials.
 
 </details>
 
@@ -74,7 +71,7 @@ The app must have the following functionalities:
 <summary>Click to view</summary>
 <br>
 
-- use react-popup third party package to show user registration status
+- use react-popup third party package for logout status
 </details>
 
 ### Important Note
@@ -84,7 +81,7 @@ The app must have the following functionalities:
 <br/>
 
 - user credentials for authentication.
-- email: 'vicky1234@gmail.com', password: '1234567'
+- email: 'hari@gmail.com', password: '12345'
 
 </details>
 
@@ -94,24 +91,23 @@ The app must have the following functionalities:
 <summary>Data Fetch URLs</summary>
 <br/>
 
-- register API: 'https://auth-api10.p.rapidapi.com/api/v1/register'
-- login API: 'https://auth-api10.p.rapidapi.com/api/v1/login'
-
-</details>
-
-<details>
-<summary>Image URLs</summary>
-<br/>
-
-- Add the list of all image URLs needed in the assignment yourself.
+- register API: 'https://66853a82b3f57b06dd4be28b.mockapi.io/register'
+- login API: 'https://66853a82b3f57b06dd4be28b.mockapi.io/login'
 
 </details>
 
 <details>
 <summary>Colors</summary>
 <br/>
-
-Add the text and background colours to be used in the assignment yourself.
+red
+lightblue
+#ffffff
+blue
+wheat
+black
+yellow
+violet
+aquamarine
 
 <!-- <div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div> -->
 

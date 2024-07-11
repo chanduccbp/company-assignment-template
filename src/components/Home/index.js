@@ -28,13 +28,21 @@ const Home = props => {
         }
       >
         {close => (
-          <div>
+          <div className="popup-cont">
             <h1>Are you sure,you want to logout?</h1>
             <div>
-              <button type="button" onClick={() => close()}>
+              <button
+                type="button"
+                onClick={() => close()}
+                className="popup-butt"
+              >
                 Cancel
               </button>
-              <button type="button" onClick={onClickLogout}>
+              <button
+                type="button"
+                onClick={onClickLogout}
+                className="popup-butt"
+              >
                 Confirm
               </button>
             </div>

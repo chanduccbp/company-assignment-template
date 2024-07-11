@@ -41,18 +41,20 @@ class LoginForm extends Component {
   submitForm = async event => {
     event.preventDefault()
     const {email, password} = this.state
-    const userDetails = {email, password}
-    const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/login'
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
-    const response = await fetch(url, options)
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
-    if (response.ok === true) {
-      this.onSubmitSuccess(data.jwt_token)
+    if (email !== '' && password !== '') {
+      const userDetails = {email, password}
+      const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/login'
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(userDetails),
+      }
+      const response = await fetch(url, options)
+      console.log(response)
+      const data = await response.json()
+      console.log(data)
+      if (response.ok === true) {
+        this.onSubmitSuccess(data.jwt_token)
+      }
     } else {
       this.onSubmitFailure('enter valid credentials')
     }
@@ -69,7 +71,7 @@ class LoginForm extends Component {
         <input
           type="password"
           id="password"
-          className="password-input-field"
+          className="input-field"
           value={password}
           onChange={this.onChangePassword}
           placeholder="Password"
@@ -89,7 +91,7 @@ class LoginForm extends Component {
         <input
           type="text"
           id="email"
-          className="email-input-field"
+          className="input-field"
           value={email}
           onChange={this.onChangeEmail}
           placeholder="Email"
@@ -109,6 +111,7 @@ class LoginForm extends Component {
     return (
       <div className="login-form-container">
         <form className="form-container" onSubmit={this.submitForm}>
+          <h1>Login</h1>
           <div className="input-container">{this.renderEmailField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
           <button type="submit" className="login-button">

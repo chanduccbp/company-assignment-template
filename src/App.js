@@ -3,6 +3,8 @@ import LoginForm from './components/LoginForm'
 import RegistrationForm from './components/RegistrationForm'
 import Home from './components/Home'
 
+import './App.css'
+
 const App = () => (
   <Switch>
     <Route exact path="/login" component={LoginForm} />

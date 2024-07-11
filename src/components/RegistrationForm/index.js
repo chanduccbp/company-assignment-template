@@ -7,6 +7,8 @@ class RegistrationForm extends Component {
     username: '',
     email: '',
     password: '',
+    showSubmitError: false,
+    errorMsg: '',
   }
 
   onChangeEmail = event => {
@@ -30,19 +32,27 @@ class RegistrationForm extends Component {
     history.replace('/login')
   }
 
+  onSubmitFailure = errorMsg => {
+    this.setState({showSubmitError: true, errorMsg})
+  }
+
   submitForm = async event => {
     event.preventDefault()
     const {username, email, password} = this.state
-    const userDetails = {username, email, password}
-    const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/register'
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
-    const response = await fetch(url, options)
-    const data = await response.json()
-    if (response.ok === true) {
-      this.onSubmitSuccess(data.jwt_token)
+    if (email !== '' && password !== '' && username !== '') {
+      const userDetails = {username, email, password}
+      const url = 'https://66853a82b3f57b06dd4be28b.mockapi.io/register'
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(userDetails),
+      }
+      const response = await fetch(url, options)
+      const data = await response.json()
+      if (response.ok === true) {
+        this.onSubmitSuccess(data.jwt_token)
+      }
+    } else {
+      this.onSubmitFailure('enter valid credentials')
     }
   }
 
@@ -57,7 +67,7 @@ class RegistrationForm extends Component {
         <input
           type="text"
           id="username"
-          className="username-input-field"
+          className="input-field"
           value={username}
           onChange={this.onChangeUsername}
           placeholder="Username"
@@ -77,7 +87,7 @@ class RegistrationForm extends Component {
         <input
           type="password"
           id="password"
-          className="password-input-field"
+          className="input-field"
           value={password}
           onChange={this.onChangePassword}
           placeholder="Password"
@@ -97,7 +107,7 @@ class RegistrationForm extends Component {
         <input
           type="text"
           id="email"
-          className="email-input-field"
+          className="input-field"
           value={email}
           onChange={this.onChangeEmail}
           placeholder="Email"
@@ -111,7 +121,8 @@ class RegistrationForm extends Component {
 
     return (
       <div className="register-form-container">
-        <form className="form-container" onSubmit={this.submitForm}>
+        <form className="reg-form-container" onSubmit={this.submitForm}>
+          <h1>Register</h1>
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderEmailField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
